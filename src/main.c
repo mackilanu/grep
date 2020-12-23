@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
         return printf("Please provide a file to grep\n");
 
     for(int i = 2; i < argc; i++)
-        read_file(argv[1], argv[i], isMultipleFiles(argc));
+        read_file(argv[1], argv[i], is_multiple_files(argc));
 }
 
 
