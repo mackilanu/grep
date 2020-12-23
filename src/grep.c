@@ -19,7 +19,7 @@ void read_file(char *pattern, char *file, bool mFiles)
     fclose(fp);
 }
 
-void print_match(char *fn, char *buf, char* match, char *pattern, bool mFiles)
+void print_match(char *fn, char *buf, char *match, char *pattern, bool mFiles)
 {
     int pos = match - buf;
     int len = strlen(pattern);
