@@ -11,12 +11,14 @@ void read_file(char *pattern, char *file, bool mFiles)
     char buf[bSize];
     char *match = NULL;
 
-    fp = fopen(file, "r");
-    
-    while(fgets(buf, bSize, fp))
-        if((match = strstr(buf, pattern)) != NULL && strlen(buf) > 0)
-            print_match(file, buf, match, pattern, mFiles);
-    fclose(fp);
+    if((fp = fopen(file, "r")) != NULL) {
+        while (fgets(buf, bSize, fp))
+            if ((match = strstr(buf, pattern)) != NULL && strlen(buf) > 0)
+                print_match(file, buf, match, pattern, mFiles);
+        fclose(fp);
+    } else {
+        printf("Error: file %s does not exist or could not be open.\n", file);
+    }
 }
 
 void print_match(char *fn, char *buf, char *match, char *pattern, bool mFiles)
