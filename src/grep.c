@@ -17,7 +17,7 @@ void read_file(char *pattern, char *file, bool mFiles)
                 print_match(file, buf, match, pattern, mFiles);
         fclose(fp);
     } else {
-        printf("Error: file %s does not exist or could not be open.\n", file);
+        printf("Error: file %s does not exist or could not be opened.\n", file);
     }
 }
 
