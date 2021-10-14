@@ -30,7 +30,7 @@ void print_match(char *fn, char *buf, char *match, char *pattern, bool mFiles)
         printf(KCYN "%s:", fn);
     }
     for(int i = 0; i < strlen(buf); i++) {
-        if(i >= pos && i <= (pos + len))
+        if(i >= pos && i < (pos + len))
             printf(KGRN "%c", buf[i]);
         else
             printf(KWHT "%c", buf[i]);
